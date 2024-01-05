@@ -1,0 +1,19 @@
+# Install Docker
+sudo apt-get update
+sudo apt-get install docker.io
+# modify the dockerfile and save(using :wq)
+vim dockerfile
+
+# Build dockerfile and tag image as a1:wang
+sudo docker build -t a1:wang .
+
+# list images to check 
+sudo docker images
+
+# Run the image as a container ‘cca1_nginx_php’
+sudo docker run -it -d -v $PWD/src:/var/www/html -p 80:80 --name cca1_nginx_php a1:wang
+
+# list the running containers to check
+sudo docker ps
+
+
